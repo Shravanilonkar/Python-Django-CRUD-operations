@@ -1,1 +1,1 @@
-This Django project implements CRUD operations, featuring a signup page. HTML files are stored in the templates folder, while CSS and JavaScript files for validation are stored in the static folder.
+This Django project implements CRUD operations, featuring a signup page. HTML files are stored in the templates folder, while CSS and JavaScript files for validation are stored in the static folder. The Signup.html provides the main signup functionality. 
