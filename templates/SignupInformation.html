@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Table</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">
+</head>
+
+<body>
+
+    <h2>Customer Details</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th><b>No.</b></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for d in data %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{d.uname}}</td>
+                <td>{{d.email}}</td>
+                <td>{{d.cpassword}}</td>
+                <td>
+                    <a type="button" href="/update/{{d.email}}" class="btn btn-edit">Edit</a>
+                </td>
+                <td>
+                    <a type="button" href="/delete/{{d.email}}" class="btn btn-delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<HEAD>
+    <title>update</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+
+
+</HEAD>
+
+<body>
+    <div class="main">
+
+        <input type="checkbox" id="cb" aria-hidden="true">
+
+        <div class="signup">
+            <form action="/update/{{d.email}}" id="loginf" method="post" onsubmit="return validateForm()">{% csrf_token %}
+
+                <div class="info">
+                    <label for="cb" aria-hidden="true">Update</label>
+
+
+                    <input type="text" id="uname" name="uname" value="{{d.uname}}" placeholder="Name " required onkeypress="return (event.charCode > 64 && 
+                    event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)">
+                    <center> <span id="error-message" style="color: red;"></span></center>
+                    <input type="email" id="email" name="email" value="{{d.email}}" placeholder="Email" required>
+                    <input type="password" id="password" name="password" value="{{d.password}}" placeholder="Password" required>
+                    <center><span id="error-password" style="color: red;"></span></center>
+                    <input type="password" id="cpassword" name="cpassword" value="{{d.cpassword}}" placeholder="Confirm Password" required>
+                    <center><span id="error-message1" style="color: red;"></span></center>
+                    <button type="submit" id="signup" onclick="return validateName()">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'login.js' %}"></script>
+</body>
+
+</html>
